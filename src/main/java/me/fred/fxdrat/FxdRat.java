@@ -11,14 +11,17 @@ public class FxdRat {
     public static int fatalcount = 0;
 
     private static CheckManager cm;
-    public static void main(String[] args) {
-        Logger.setDebug(true);
 
+    public static void main(String[] args) {
         Logger.log("FxdRat v" + version + " by " + author, LogLevel.INFO);
         if (args.length == 0) {
             Logger.log("Usage: java -jar fxdrat.jar <filepath>", LogLevel.ERROR);
             return;
         }
+        if (args.length == 2)
+            if (args[1].equalsIgnoreCase("true") || args[1].equalsIgnoreCase("false")) {
+                Logger.setDebug(args[1].equalsIgnoreCase("true"));
+            }
 
         Logger.log("Loading checks...", LogLevel.DEBUG);
         cm = new CheckManager();
@@ -32,17 +35,12 @@ public class FxdRat {
 
         if (fatalcount > 5) {
             Logger.log("This file is a RAT! Fatal score: " + fatalcount, LogLevel.FATAL);
-            File rat = new File(args[0]);
-            rat.delete();
-            Logger.log("Deleted the rat successfully.", LogLevel.INFO);
         } else if (fatalcount > 0) {
             Logger.log("The scan has found " + fatalcount + " Fatal evidence that the specified file could be a Rat.", LogLevel.FATAL);
         } else {
             Logger.log("The file seems to be safe...", LogLevel.INFO);
         }
     }
-
-
 }
 
 //TODO gui
