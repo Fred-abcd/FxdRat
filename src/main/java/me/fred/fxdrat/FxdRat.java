@@ -8,7 +8,7 @@ import me.fred.fxdrat.utils.UpdateUtil;
 import java.io.File;
 
 public class FxdRat {
-    public static final String version = "1.0.3", author = "FxD";
+    public static final String version = "1.0.5", author = "FxD";
     public static int fatalcount = 0;
 
     private static CheckManager cm;
