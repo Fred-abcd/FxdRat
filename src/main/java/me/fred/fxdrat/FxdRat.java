@@ -3,17 +3,21 @@ package me.fred.fxdrat;
 import me.fred.fxdrat.checker.CheckManager;
 import me.fred.fxdrat.utils.LogLevel;
 import me.fred.fxdrat.utils.Logger;
+import me.fred.fxdrat.utils.UpdateUtil;
 
 import java.io.File;
 
 public class FxdRat {
-    private static final String version = "1.0.4", author = "FxD";
+    public static final String version = "1.0.3", author = "FxD";
     public static int fatalcount = 0;
 
     private static CheckManager cm;
 
     public static void main(String[] args) {
         Logger.log("FxdRat v" + version + " by " + author, LogLevel.INFO);
+
+        UpdateUtil.checkForUpdates();
+
         if (args.length == 0) {
             Logger.log("Usage: java -jar fxdrat.jar <filepath>", LogLevel.ERROR);
             return;
