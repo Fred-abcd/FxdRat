@@ -40,7 +40,7 @@ This will enable more detailed logging.
 
 - **GUI:** Integrate a graphical user interface for easier interaction.
 - **Check Selector:** Allow users to choose specific checks to run.
-- **Auto Update:** Implement automatic update functionality for the tool.
+- ~~Auto Update: Implement automatic update functionality for the tool.~~
 
 
 ## Author
