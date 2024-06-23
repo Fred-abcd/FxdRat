@@ -47,6 +47,8 @@ This will enable more detailed logging.
 
 - **Author:** Fred aka. FxD
 
+## Wakatime
+[![wakatime](https://wakatime.com/badge/user/018c9742-04ae-4af3-8234-447d5408f2a2/project/a5db316b-dea8-4add-903f-16d3a67ae029.svg)](https://wakatime.com/badge/user/018c9742-04ae-4af3-8234-447d5408f2a2/project/a5db316b-dea8-4add-903f-16d3a67ae029)
 
 ## License
 
