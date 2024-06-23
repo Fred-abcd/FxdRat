@@ -1,10 +1,7 @@
 package me.fred.fxdrat.checker;
 
 import javassist.ClassPool;
-import me.fred.fxdrat.checker.impl.DiscordCheck;
-import me.fred.fxdrat.checker.impl.HttpCheck;
-import me.fred.fxdrat.checker.impl.MinecraftCheck;
-import me.fred.fxdrat.checker.impl.StringCheck;
+import me.fred.fxdrat.checker.impl.*;
 import me.fred.fxdrat.utils.LogLevel;
 import me.fred.fxdrat.utils.Logger;
 
@@ -32,9 +29,15 @@ public class CheckManager {
         addCheck(new DiscordCheck());
         addCheck(new MinecraftCheck());
         addCheck(new StringCheck());
+        addCheck(new BrowserCheck());
+        addCheck(new MethodCheck());
     }
 
     public void executeChecks(String filePath) {
+        if (!new File(filePath).exists()) {
+            Logger.log("The file " + filePath + " does not exist. Check the file path!", LogLevel.ERROR);
+            System.exit(1);
+        }
         for (Check check : getChecks()) {
             Logger.log("check: " + check.checkName, LogLevel.DEBUG);
             startCheck(check, filePath);

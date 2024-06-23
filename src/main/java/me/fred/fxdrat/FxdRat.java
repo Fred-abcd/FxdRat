@@ -49,4 +49,3 @@ public class FxdRat {
 
 //TODO gui
 //TODO check selector
-//TODO auto update
